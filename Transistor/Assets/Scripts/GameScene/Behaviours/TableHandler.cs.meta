@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: 11e850cb1ff5d0d44a3693211942dc0e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - gameData: {instanceID: 0}
+  - TableVerticalDivider: {instanceID: 0}
+  - TableHorizontalDivider: {instanceID: 0}
+  - HeaderImage: {instanceID: 0}
+  - A: {instanceID: 0}
+  - B: {instanceID: 0}
+  - C: {instanceID: 0}
+  - D: {instanceID: 0}
+  - S1: {instanceID: 0}
+  - S2: {instanceID: 0}
+  - S3: {instanceID: 0}
+  - OnIndicator: {instanceID: 0}
+  - OffIndicator: {instanceID: 0}
+  - ConfirmationFill: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
