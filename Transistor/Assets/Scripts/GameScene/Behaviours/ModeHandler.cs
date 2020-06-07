@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class ModeHandler : MonoBehaviour
 {
-    public enum Mode { Wire, Move, Delete, Interact, Edit }
+    public enum Mode { List, Wire, Move, Delete, Interact, Edit }
     public enum EditPanel { None, Letter, Number }
     public Button WireButton;
     public Button MoveButton;

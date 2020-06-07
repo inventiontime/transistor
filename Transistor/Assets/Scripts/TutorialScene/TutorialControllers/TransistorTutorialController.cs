@@ -2,6 +2,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TransistorTutorialController : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class TransistorTutorialController : MonoBehaviour
     public float timeBetweenChar;
 
     int tutorialStage = -1;
+    bool showingText;
+    bool skipped;
 
     void Start()
     {
@@ -69,8 +72,15 @@ public class TransistorTutorialController : MonoBehaviour
 
     public void NextStage()
     {
-        tutorialStage++;
-        CheckStage();
+        if (!showingText)
+        {
+            tutorialStage++;
+            CheckStage();
+        }
+        else
+        {
+            skipped = true;
+        }
     }
 
     public void PrevStage()
@@ -87,7 +97,7 @@ public class TransistorTutorialController : MonoBehaviour
         switch (tutorialStage)
         {
             case 0:
-                ShowText("PART B");
+                ShowText("PART C");
                 break;
 
             case 1:
@@ -130,7 +140,7 @@ public class TransistorTutorialController : MonoBehaviour
                 break;
 
             case 8:
-                ShowText("PART C");
+                ShowText("PART D");
                 NPN.transistor.SetActive(false);
                 PNP.transistor.SetActive(true);
                 break;
@@ -171,17 +181,23 @@ public class TransistorTutorialController : MonoBehaviour
 
     IEnumerator ShowTextCoroutine(string text, int tutorialStage)
     {
+        showingText = true;
+        skipped = false;
         int i = 0;
-        while (tutorialStage == this.tutorialStage && i < text.Length)
+        while (tutorialStage == this.tutorialStage && i < text.Length && !skipped)
         {
             textObject.text += text[i];
             i++;
             yield return new WaitForSeconds(timeBetweenChar);
         }
+        if(skipped)
+            textObject.text = text;
+        showingText = false;
     }
 
     void NextTutorial()
     {
-
+        PlayerPrefs.SetInt("TransistorTutorialCompleted", 1);
+        SceneManager.LoadScene("TutorialMenu");
     }
 }

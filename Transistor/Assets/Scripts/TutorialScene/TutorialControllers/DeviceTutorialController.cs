@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DeviceTutorialController : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class DeviceTutorialController : MonoBehaviour
     int tutorialStage = -1;
     string[] text;
     bool interacted;
+    bool showingText;
+    bool skipped;
 
     void Start()
     {
@@ -41,8 +44,15 @@ public class DeviceTutorialController : MonoBehaviour
 
     public void NextStage()
     {
-        tutorialStage++;
-        CheckStage();
+        if (!showingText)
+        {
+            tutorialStage++;
+            CheckStage();
+        }
+        else
+        {
+            skipped = true;
+        }
     }
 
     public void PrevStage()
@@ -94,17 +104,23 @@ public class DeviceTutorialController : MonoBehaviour
 
     IEnumerator ShowTextCoroutine(string text, int tutorialStage)
     {
+        showingText = true;
+        skipped = false;
         int i = 0;
-        while (tutorialStage == this.tutorialStage && i < text.Length)
+        while (tutorialStage == this.tutorialStage && i < text.Length && !skipped)
         {
             textObject.text += text[i];
             i++;
             yield return new WaitForSeconds(timeBetweenChar);
         }
+        if (skipped)
+            textObject.text = text;
+        showingText = false;
     }
 
     void NextTutorial()
     {
-
+        PlayerPrefs.SetInt("DeviceTutorialCompleted", 1);
+        SceneManager.LoadScene("TutorialMenu");
     }
 }

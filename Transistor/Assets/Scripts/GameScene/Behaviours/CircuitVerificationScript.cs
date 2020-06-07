@@ -65,6 +65,10 @@ public class CircuitVerificationScript : MonoBehaviour
                     = new Vector2(rectTransform.sizeDelta.x * filledTime / fillTime, rowThickness);
                 }
             }
+            else
+            {
+                GameManager.Instance.LevelCompleted();
+            }
 
             ///////// Verification
             if (fillingIndex < GameManager.Instance.levelData.rows)

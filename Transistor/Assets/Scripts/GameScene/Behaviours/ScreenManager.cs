@@ -6,6 +6,7 @@ public class ScreenManager : MonoBehaviour
     public GameObject ListScreen;
 
     public string startScreen;
+    public string currentScreen;
 
     GameObject[] screens;
 
@@ -28,10 +29,12 @@ public class ScreenManager : MonoBehaviour
         {
             case "BuildScreen":
                 BuildScreen.SetActive(true);
+                currentScreen = "BuildScreen";
                 break;
 
             case "ListScreen":
                 ListScreen.SetActive(true);
+                currentScreen = "ListScreen";
                 break;
         }
     }

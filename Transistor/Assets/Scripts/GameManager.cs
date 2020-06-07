@@ -3,6 +3,7 @@
 public class GameManager : MonoBehaviour
 {
     public LevelData levelData;
+    public bool levelCompleted = false;
 
     // Singleton Code
 
@@ -20,4 +21,8 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
+    public void LevelCompleted()
+    {
+        levelCompleted = true;
+    }
 }
