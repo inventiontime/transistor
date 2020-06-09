@@ -3,22 +3,22 @@
 public class GameManager : MonoBehaviour
 {
     public LevelData levelData;
+    public StageData stageData;
+    public Stages stages;
     public bool levelCompleted = false;
-
-    // Singleton Code
-
-    private static GameManager instance = null;
-    public static GameManager Instance => instance;
+    public static GameManager Instance;
 
     private void Awake()
     {
-        if (instance != null && instance != this)
+        if (Instance != null && Instance != this)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
 
-        instance = this;
-        DontDestroyOnLoad(this.gameObject);
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+
+        LoadSave.SetSize();
     }
 
     public void LevelCompleted()

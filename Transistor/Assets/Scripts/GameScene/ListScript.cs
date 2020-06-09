@@ -15,15 +15,12 @@ public class ListScript : MonoBehaviour
     int pageNo = 0;
 
 
-    int listLength;
-    int noOfGates;
+    int listLength => listPositions.Length;
+    int noOfGates => gates.Length;
 
     void Start()
     {
         gates = GameManager.Instance.levelData.gates;
-
-        listLength = listPositions.Length;
-        noOfGates = gates.Length;
 
         listPositionObjects = new GameObject[listLength];
 

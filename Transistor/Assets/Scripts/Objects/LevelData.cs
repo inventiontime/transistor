@@ -13,6 +13,8 @@ public class LevelData : ScriptableObject
     public int noOfInputs;
     public int noOfOutputs;
     public List<myList> TruthTable;
+    public int minNoOfGates;
+    public string preLevelText;
 
     [System.Serializable]
     public class myList

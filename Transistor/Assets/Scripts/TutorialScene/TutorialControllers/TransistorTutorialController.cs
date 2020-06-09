@@ -190,7 +190,7 @@ public class TransistorTutorialController : MonoBehaviour
             i++;
             yield return new WaitForSeconds(timeBetweenChar);
         }
-        if(skipped)
+        if (skipped)
             textObject.text = text;
         showingText = false;
     }

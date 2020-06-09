@@ -85,13 +85,22 @@ public class CircuitVerificationScript : MonoBehaviour
                 {
                     for (int i = GameManager.Instance.levelData.noOfInputs; i < GameManager.Instance.levelData.columns; i++)
                     {
-                        foreach (var x in labelHandler.GetLights(GameManager.Instance.levelData.header[i]))
+                        if (labelHandler.GetLights(GameManager.Instance.levelData.header[i]).Count == 0)
                         {
-                            if (x.state != GameManager.Instance.levelData.TruthTable[fillingIndex - 1].list[i])
+                            prevFill.GetComponent<Image>().color = new Color(1, 0, 0, 0.25f);
+                            (prevFill.transform as RectTransform).sizeDelta = new Vector2(rectTransform.sizeDelta.x, rowThickness);
+                            verifying = false;
+                        }
+                        else
+                        {
+                            foreach (var x in labelHandler.GetLights(GameManager.Instance.levelData.header[i]))
                             {
-                                prevFill.GetComponent<Image>().color = new Color(1, 0, 0, 0.25f);
-                                (prevFill.transform as RectTransform).sizeDelta = new Vector2(rectTransform.sizeDelta.x, rowThickness);
-                                verifying = false;
+                                if (x.state != GameManager.Instance.levelData.TruthTable[fillingIndex - 1].list[i])
+                                {
+                                    prevFill.GetComponent<Image>().color = new Color(1, 0, 0, 0.25f);
+                                    (prevFill.transform as RectTransform).sizeDelta = new Vector2(rectTransform.sizeDelta.x, rowThickness);
+                                    verifying = false;
+                                }
                             }
                         }
                     }

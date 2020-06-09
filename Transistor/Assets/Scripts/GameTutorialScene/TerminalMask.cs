@@ -8,7 +8,7 @@ public class TerminalMask : MonoBehaviour
     {
         foreach (DeviceScript x in FindObjectsOfType<DeviceScript>())
         {
-            if(x.type == type)
+            if (x.type == type)
             {
                 transform.position = x.terminalTS.transform.position;
             }

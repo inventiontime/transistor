@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/GameSceneTutorial.unity
     guid: 4c7178add9adce74bacdd6df052424fb
   - enabled: 1
+    path: Assets/Scenes/StageSelect.unity
+    guid: 326e8731d51ea3345ae297a5ad66bee0
+  - enabled: 1
     path: Assets/Scenes/LevelSelect.unity
     guid: ccac5198c33fb0a49a63edc389678c22
   - enabled: 1
@@ -26,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TutorialMenu.unity
     guid: 08634752dcad0104ba6463276efdf946
+  - enabled: 1
+    path: Assets/Scenes/PreLevelTextScene.unity
+    guid: e133e4be6bef7b149b5f6fe7ea1bf82c
   m_configObjects: {}

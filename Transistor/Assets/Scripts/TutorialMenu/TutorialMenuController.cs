@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class TutorialMenuController : MonoBehaviour
@@ -16,22 +14,22 @@ public class TutorialMenuController : MonoBehaviour
     void Start()
     {
         lock1.SetActive(false);
-        lock2.SetActive(true ? PlayerPrefs.GetInt("DeviceTutorialCompleted") == 0 : false);
-        lock3.SetActive(true ? PlayerPrefs.GetInt("EditorTutorialCompleted") == 0 : false);
+        lock2.SetActive(PlayerPrefs.GetInt("DeviceTutorialCompleted") == 0);
+        lock3.SetActive(PlayerPrefs.GetInt("EditorTutorialCompleted") == 0);
 
-        if(PlayerPrefs.GetInt("DeviceTutorialCompleted") == 0)
+        if (PlayerPrefs.GetInt("DeviceTutorialCompleted") == 0)
         {
             arrow1.SetActive(true);
             arrow2.SetActive(false);
             arrow3.SetActive(false);
         }
-        else if(PlayerPrefs.GetInt("EditorTutorialCompleted") == 0)
+        else if (PlayerPrefs.GetInt("EditorTutorialCompleted") == 0)
         {
             arrow1.SetActive(false);
             arrow2.SetActive(true);
             arrow3.SetActive(false);
         }
-        else if(PlayerPrefs.GetInt("TransistorTutorialCompleted") == 0)
+        else if (PlayerPrefs.GetInt("TransistorTutorialCompleted") == 0)
         {
             arrow1.SetActive(false);
             arrow2.SetActive(false);
@@ -44,10 +42,10 @@ public class TutorialMenuController : MonoBehaviour
             arrow3.SetActive(false);
         }
     }
-    
+
     public void ButtonPressed(int i)
     {
-        switch(i)
+        switch (i)
         {
             case 1:
                 SceneManager.LoadScene("DeviceTutorialScene");

@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -12,9 +11,16 @@ public class TutorialController : MonoBehaviour
 
     public float timeBetweenChar;
 
+    public LevelData levelData;
+
     int tutorialStage = -1;
     string[] text;
     string[] instructionText;
+
+    private void Awake()
+    {
+        GameManager.Instance.levelData = levelData;
+    }
 
     void Start()
     {
@@ -58,7 +64,7 @@ public class TutorialController : MonoBehaviour
             "Tap on the switch",
 
             "Tap A",
-            
+
             "Similarly, tap on the light",
 
             "Tap 1",

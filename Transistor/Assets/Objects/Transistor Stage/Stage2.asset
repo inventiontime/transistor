@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97d128ca94560b6409be343c4f0ea3aa, type: 3}
+  m_Name: Stage2
+  m_EditorClassIdentifier: 
+  gates:
+  - {fileID: 1245794475850410980, guid: e5d13cb901bd237498a071babc59bfdb, type: 3}
+  - {fileID: 6023579342956269508, guid: ffaec53af47415543ac7ecbbb9b0dede, type: 3}
+  - {fileID: 5460827363278217648, guid: fce73dae733857942b989e00c8c790f9, type: 3}
+  - {fileID: 7627028517484261348, guid: d73b3b507956a52458fa8e0abd9e88f1, type: 3}
+  header: 41003100
+  noOfInputs: 1
+  noOfOutputs: 1
+  TruthTable:
+  - list: 0100
+  - list: 0001
+  minNoOfGates: 1
+  preLevelText: In this level you will be making a circuit for a "NOT" gate (also
+    known as an inverter since it inverts signals)

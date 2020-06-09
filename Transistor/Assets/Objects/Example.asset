@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 97d128ca94560b6409be343c4f0ea3aa, type: 3}
-  m_Name: Test
+  m_Name: Example
   m_EditorClassIdentifier: 
   gates:
   - {fileID: 5460827363278217648, guid: fce73dae733857942b989e00c8c790f9, type: 3}
@@ -36,3 +36,5 @@ MonoBehaviour:
   - list: 01000100
   - list: 00010100
   - list: 01010100
+  minNoOfGates: 0
+  preLevelText: 
