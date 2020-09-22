@@ -105,8 +105,8 @@ public class LevelSelectScript : MonoBehaviour
     {
         if (pageNo > 0)
         {
-            SetList();
             pageNo--;
+            SetList();
         }
     }
 

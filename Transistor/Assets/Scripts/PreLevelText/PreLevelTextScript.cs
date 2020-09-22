@@ -39,7 +39,10 @@ public class PreLevelTextScript : MonoBehaviour
             yield return new WaitForSeconds(timeBetweenChar);
         }
         if (skipped)
+        {
             textObject.text = text;
+            skipped = false;
+        }
         showingText = false;
     }
 

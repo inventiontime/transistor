@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ModeHandler : MonoBehaviour
@@ -125,5 +126,10 @@ public class ModeHandler : MonoBehaviour
         Button1.SetActive(true);
         Button2.SetActive(true);
         Button3.SetActive(true);
+    }
+
+    public void ShowInfo()
+    {
+        SceneManager.LoadScene("InfoScene", LoadSceneMode.Additive);
     }
 }
