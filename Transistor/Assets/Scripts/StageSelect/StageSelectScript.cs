@@ -46,8 +46,8 @@ public class StageSelectScript : MonoBehaviour
     {
         if (pageNo > 0)
         {
-            pageNo--;
             SetList();
+            pageNo--;
         }
     }
 

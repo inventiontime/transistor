@@ -32,7 +32,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PreLevelTextScene.unity
     guid: e133e4be6bef7b149b5f6fe7ea1bf82c
-  - enabled: 1
-    path: Assets/Scenes/InfoScene.unity
-    guid: 5450ad220809c88468b8512febf31fea
   m_configObjects: {}

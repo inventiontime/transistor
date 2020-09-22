@@ -52,13 +52,11 @@ public class TutorialMenuController : MonoBehaviour
                 break;
 
             case 2:
-                if (PlayerPrefs.GetInt("DeviceTutorialCompleted") != 0)
-                    SceneManager.LoadScene("GameSceneTutorial");
+                SceneManager.LoadScene("GameSceneTutorial");
                 break;
 
             case 3:
-                if (PlayerPrefs.GetInt("EditorTutorialCompleted") != 0)
-                    SceneManager.LoadScene("TransistorTutorialScene");
+                SceneManager.LoadScene("TransistorTutorialScene");
                 break;
         }
     }

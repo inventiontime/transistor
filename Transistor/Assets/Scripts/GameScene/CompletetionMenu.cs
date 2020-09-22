@@ -19,10 +19,7 @@ public class CompletetionMenu : MonoBehaviour
     void Update()
     {
         if (GameManager.Instance.levelCompleted)
-        {
             ShowCompletionMenu();
-            GameManager.Instance.levelCompleted = false;
-        }
     }
 
     private void ShowCompletionMenu()
